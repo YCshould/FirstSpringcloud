@@ -1,0 +1,26 @@
+server:
+  port: 8082
+  tomcat:
+    threads:
+      max: 50
+    accept-count: 50
+    max-connections: 100
+
+feign:
+  okhttp:
+    enabled: true
+  sentinel:
+    enabled: true
+
+hm:
+  swagger:
+    package: com.hmall.cartservice.controller
+  db:
+    database: hm-cart
+
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:8090
+      http-method-specify: true
